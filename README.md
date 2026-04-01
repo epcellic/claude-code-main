@@ -34,14 +34,26 @@ Claude Code 是 Anthropic 的官方 CLI 工具（CLI 是 Command Line Interface 
 
 ```
 src/
-├── main.tsx                 # 入口点 (基于 Commander.js 的 CLI 解析器)
+单独文件
 ├── commands.ts              # 命令注册
-├── tools.ts                 # 工具注册
-├── Tool.ts                  # 工具类型定义
-├── QueryEngine.ts           # LLM 查询引擎 (核心 Anthropic API 调用器)
 ├── context.ts               # 系统/用户上下文收集
 ├── cost-tracker.ts          # 令牌成本跟踪
-│
+├── costHook.ts              # 成本钩子
+├── dialogLaunchers.tsx      # 对话启动器
+├── history.ts               # 历史记录
+├── ink.ts                   # Ink 相关
+├── interactiveHelpers.tsx  # 交互助手
+├── main.tsx                 # 入口点 (基于 Commander.js 的 CLI 解析器)
+├── projectOnboardingState.ts # 项目引导状态
+├── query.ts                 # 查询相关
+├── QueryEngine.ts           # LLM 查询引擎 (核心 Anthropic API 调用器)
+├── replLauncher.tsx         # REPL 启动器
+├── setup.ts                 # 设置
+├── Task.ts                  # 任务类型
+├── tasks.ts                 # 任务相关
+├── Tool.ts                  # 工具类型定义
+├── tools.ts                 # 工具注册
+文件夹
 ├── assistant/               # 助手会话和历史
 ├── bootstrap/               # 引导状态管理
 ├── bridge/                  # IDE 集成桥 (VS Code, JetBrains)
@@ -77,7 +89,6 @@ src/
 ├── utils/                   # 实用函数
 ├── vim/                     # Vim 模式
 └── voice/                   # 语音输入
-```
 
 ---
 
